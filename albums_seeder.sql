@@ -1,5 +1,7 @@
 USE codeup_test_db;
 
+truncate albums;
+
 INSERT INTO albums (artist, name, release_date, sales, genre)
 VALUES ('Fleetwood Mac', 'Rumors', 1977, 27.9, 'Soft Rock'),
        ('Bee Gees', 'Saturday Night Fever', 1977, 21.6, 'Disco'),
