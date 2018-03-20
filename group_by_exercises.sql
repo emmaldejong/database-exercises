@@ -36,4 +36,18 @@ WHERE first_name IN ('Irena', 'Vidya', 'Maya')
 GROUP BY gender
 ORDER BY COUNT(*);
 
+# average salary functions
+SELECT emp_no, avg(salary)
+FROM salaries
+GROUP BY emp_no
+LIMIT 5;
 
+SELECT avg(salary)
+FROM salaries WHERE emp_no = 10004;
+
+#top 10 most common hire dates
+SELECT hire_date, count(*)
+FROM employees
+GROUP BY hire_date
+ORDER BY count(*) DESC
+LIMIT 10;
