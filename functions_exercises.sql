@@ -31,7 +31,7 @@ ORDER BY emp_no ASC ;
 # Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.
 SELECT * FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' ORDER BY emp_no ASC ;
 # Find all employees hired in the 90s and born on Christmas — 362 rows.
-SELECT concat(first_name, ' ', last_name), datediff(curdate(), hire_date)
+SELECT concat(first_name, ' ', last_name, ' has been working at the company for ', datediff(curdate(), hire_date), ' days.')
 FROM employees
 WHERE hire_date
       BETWEEN '1990-01-01'
