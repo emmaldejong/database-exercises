@@ -3,7 +3,7 @@ USE employees;
 
 SHOW TABLES;
 
-
+SELECT * FROM employees;
 # 1 Create a file named where_exercises.sql. Make sure to use the employees database
 # 2 Find all employees with first names 'Irena', 'Vidya', or 'Maya' — 709 rows (Hint: Use IN).
 SELECT * FROM employees WHERE first_name IN ('irena', 'vidya', 'maya');
