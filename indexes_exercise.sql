@@ -15,5 +15,4 @@ SELECT * FROM albums;
 
 ALTER TABLE albums ADD UNIQUE (name, artist );
 
-insert into albums (name, artist, release_date, sales, genre) values('Nevermind', 'Nirvana', 1991, 167, 'Grunge');
-
+INSERT INTO albums (name, artist, release_date, sales, genre) VALUES ('Nevermind', 'Nirvana', 1991, 167, 'Grunge');
