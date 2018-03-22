@@ -45,3 +45,16 @@ FROM employees AS e
   JOIN dept_emp AS emp
     ON e.emp_no = emp.emp_no
 GROUP BY Employee_Gender;
+
+# Average salary by department
+SELECT avg(salary) as AVG_SALARY, dept_name AS DEPARTMENT_NAME
+FROM employees as e
+  JOIN salaries s
+    ON e.emp_no = s.emp_no
+  JOIN dept_emp emp
+    ON e.emp_no = emp.emp_no
+  JOIN departments d
+    ON emp.dept_no = d.dept_no
+WHERE s.to_date >= curdate() AND emp.to_date >= curdate()
+GROUP BY dept_name
+ORDER BY AVG_SALARY DESC ;
