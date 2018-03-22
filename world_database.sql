@@ -24,7 +24,7 @@ FROM countrylanguage AS cl
   JOIN city AS ci
     ON c.Code = ci.CountryCode
 WHERE ci.Name = 'Santa Monica'
-ORDER BY Language_Spoken;
+ORDER BY Percentage;
 
 
 # How many different countries are in each region?
@@ -59,7 +59,8 @@ ORDER BY Language_Spoken;
 -- +---------------------------+---------------+
 SELECT Region, COUNT(*) AS num_countries
 FROM country
-GROUP BY Region;
+GROUP BY Region
+ORDER BY COUNT(*);
 
 # What is the population for each region?
 -- +---------------------------+------------+
@@ -93,7 +94,8 @@ GROUP BY Region;
 -- +---------------------------+------------+
 SELECT Region, SUM(Population) AS Population
 FROM country
-GROUP BY Region;
+GROUP BY Region
+ORDER BY SUM(Population) DESC;
 
 # What is the population for each continent?
 -- +---------------+------------+
@@ -109,7 +111,8 @@ GROUP BY Region;
 -- +---------------+------------+
 SELECT Continent, SUM(Population) AS Population
 FROM country
-GROUP BY Continent;
+GROUP BY Continent
+ORDER BY SUM(Population) DESC;
 
 # What is the average life expectancy globally?
 -- +---------------------+
@@ -134,7 +137,8 @@ FROM country;
 -- +---------------+-----------------+
 SELECT Continent, AVG(LifeExpectancy) AS Life_Expectancy
 FROM country
-GROUP BY Continent;
+GROUP BY Continent
+ORDER BY AVG(LifeExpectancy);
 
 -- +---------------------------+-----------------+
 -- | Region                    | life_expectancy |
@@ -167,7 +171,8 @@ GROUP BY Continent;
 -- +---------------------------+-----------------+
 SELECT Region, AVG(LifeExpectancy) AS Life_Expectancy
 FROM country
-GROUP BY Region;
+GROUP BY Region
+ORDER BY Life_Expectancy;
 
 # Bonus
 -- Find all the countries whose local name is different from the official name
